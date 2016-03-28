@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7D893DAC-17AC-8B3E-1A7D-A9B620785A50}") = "SequencerSystem", "Assembly-CSharp.csproj", "{87B21B09-2788-47B9-4B51-D3AA53DB7CEC}"
+EndProject
+Project("{7D893DAC-17AC-8B3E-1A7D-A9B620785A50}") = "SequencerSystem", "Assembly-CSharp-Editor.csproj", "{1188F19A-7F25-42EB-9DFB-54E1B0686A12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87B21B09-2788-47B9-4B51-D3AA53DB7CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B21B09-2788-47B9-4B51-D3AA53DB7CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B21B09-2788-47B9-4B51-D3AA53DB7CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B21B09-2788-47B9-4B51-D3AA53DB7CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1188F19A-7F25-42EB-9DFB-54E1B0686A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1188F19A-7F25-42EB-9DFB-54E1B0686A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1188F19A-7F25-42EB-9DFB-54E1B0686A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1188F19A-7F25-42EB-9DFB-54E1B0686A12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
