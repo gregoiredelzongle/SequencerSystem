@@ -16,6 +16,7 @@ namespace Headache.Sequencer
 		public string actorName;
 		public abstract string GetID();
 		public abstract void DisplayArgsGUI(Node node,out float height);
+		public abstract SequencerTask Create();
 		public abstract void Init();
 		public virtual void OnRemove(Node node){}
 

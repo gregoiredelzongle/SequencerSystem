@@ -16,32 +16,7 @@ using System;
 
 namespace Headache.Sequencer
 {
-    [System.Serializable]
-    public class Reply : ScriptableObject
-    {
-        public string text;
-        public NodeOutput output;
-
-        public void Init(string text, NodeOutput output)
-        {
-            this.text = text;
-			this.output = output;
-        }
-
-		public static Reply Create(Node node)
-		{
-			node.CreateOutput ("", "Float");
-
-			NodeOutput output = node.nodeKnobs [node.nodeKnobs.Count - 1] as NodeOutput;
-			Reply reply = CreateInstance<Reply>();
-			reply.Init(" ", output);
-			return reply;
-		}
-
-	
-
-
-    }
+   
 
     [System.Serializable]
     public class PlayDialogueTask : SequencerTask
@@ -58,17 +33,19 @@ namespace Headache.Sequencer
 
         public List<Reply> replies;
 
-        /*public PlayDialogueTask(string dialogue)
-        {
-            this.dialogue = dialogue;
-        }*/
-
         public override void Init()
         {
             replies = new List<Reply>();
             this.actorName = "";
             this.dialogue = "";
         }
+
+		public override SequencerTask Create()
+		{
+			PlayDialogueTask task = CreateInstance<PlayDialogueTask> ();
+			task.Init ();
+			return task as SequencerTask;
+		}
 
         public override void DisplayArgsGUI(Node node, out float height)
         {
@@ -144,4 +121,31 @@ namespace Headache.Sequencer
 
 		public override System.Type GetActorType(){return typeof(PlayDialogueActor);}
     }
+
+	[System.Serializable]
+	public class Reply : ScriptableObject
+	{
+		public string text;
+		public NodeOutput output;
+
+		public void Init(string text, NodeOutput output)
+		{
+			this.text = text;
+			this.output = output;
+		}
+
+		public static Reply Create(Node node)
+		{
+			node.CreateOutput ("", "Float");
+
+			NodeOutput output = node.nodeKnobs [node.nodeKnobs.Count - 1] as NodeOutput;
+			Reply reply = CreateInstance<Reply>();
+			reply.Init(" ", output);
+			return reply;
+		}
+
+
+
+
+	}
 }

@@ -28,7 +28,7 @@ namespace Headache.Sequencer
             }
         }
 
-        public static string[] TaskNames()
+        public static string[] TasksID()
         {
             if (tasks == null)
                 FetchTasks();
@@ -40,6 +40,26 @@ namespace Headache.Sequencer
             }
             return tasksName.ToArray();
         }
+
+		public static SequencerTask getDefaultTask (string taskID)
+		{
+			if (tasks == null)
+				FetchTasks();
+
+			return tasks.Single<SequencerTask> ((SequencerTask task) => task.GetID() == taskID);
+		}
+
+		/// <summary>
+		/// Returns the default node from the node type. 
+		/// The default node is a dummy used to create other nodes (Due to various limitations creation has to be performed on Node instances)
+		/// </summary>
+		public static T getDefaultTask<T> () where T : SequencerTask
+		{
+			if (tasks == null)
+				FetchTasks();
+			
+			return tasks.Single<SequencerTask> ((SequencerTask task) => tasks.GetType () == typeof (T)) as T;
+		}
 
     }
 }

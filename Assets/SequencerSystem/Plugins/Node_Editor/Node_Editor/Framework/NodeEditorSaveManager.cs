@@ -278,6 +278,9 @@ namespace NodeEditorFramework
 				clonedNode.CopyScriptableObjects ((ScriptableObject so) => ReplaceSO (allSOs, clonedSOs, so));
 			}
 
+			// Replace nodeCanvas start node
+			nodeCanvas.start = ReplaceSO (allSOs,clonedSOs,nodeCanvas.start);
+
 			// Also create working copies for specified editorStates, if any
 			// Needs to be in the same function as the EditorState references nodes from the NodeCanvas
 			if (editorStates != null)

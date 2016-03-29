@@ -33,21 +33,15 @@ namespace Headache.Sequencer{
 
 			Dictionary<SequencerTask,SequencerActor> dictionary = new Dictionary<SequencerTask,SequencerActor> ();
 
+			NodeOutput output = canvas.start.nodeKnobs [0] as NodeOutput;
+			sequencer.start = output.connections [0].body as SequenceNode;
+			
+
 			foreach(Node node in canvas.nodes)
 			{
-				if (node.GetID == "startSequencer" && sequencer.start == null) {
-
-					NodeOutput output = node.nodeKnobs [0] as NodeOutput;
-
-					if (output.connections.Count == 0)
-						Debug.LogError ("StartSequence node not connected");
-					else {
-						sequencer.start = output.connections [0].body as SequenceNode;
-					}
-				}
-				if (node.GetID == "SequenceNode") {
+				if (node.GetID != "startSequencer") {
 					SequenceNode sqNode = node as SequenceNode;
-					foreach (SequencerTask args in sqNode.actions) {
+					foreach (SequencerTask args in sqNode.tasks) {
 						dictionary.Add (args, null);
 					}
 				}
@@ -55,7 +49,7 @@ namespace Headache.Sequencer{
 
 			sequencer.InitDictionary (dictionary);
 
-			//Debug.Log ("Sequencer successfully loaded : " + sequencer.links.Count + " actions loaded");
+			//Debug.Log ("Sequencer successfully loaded : " + sequencer.links.Count + " tasks loaded");
 
 			return sequencer;
 		}
@@ -86,12 +80,12 @@ namespace Headache.Sequencer{
 
 		public void RunNodeTasks(SequenceNode node)
 		{
-			foreach (SequencerTask args in node.actions) {
-				if (links [args] == null)
+			foreach (SequencerTask task in node.tasks) {
+				if (links [task] == null)
 					Debug.LogError ("Actor not found");
 
-				links [args].onTaskFinished += OnTaskFinished;
-				links [args].Run (args);
+				links [task].onTaskFinished += OnTaskFinished;
+				links [task].Run (task);
 			}
 		}
 
@@ -100,7 +94,7 @@ namespace Headache.Sequencer{
 			if (currentNode == null)
 				return;
 
-			foreach (SequencerTask args in currentNode.actions) {
+			foreach (SequencerTask args in currentNode.tasks) {
 				links [args].ButtonPressed (id);
 			}
 		}

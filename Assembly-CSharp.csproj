@@ -45,8 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\SequenceNode.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\StartSequencerNode.cs" />
+     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Dialogue\DialogueNode.cs" />
+     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\SequenceNode.cs" />
+     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\StartSequencerNode.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\ConnectionTypes.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\Node.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeCanvas.cs" />
@@ -59,11 +60,6 @@
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeKnob.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeOutput.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeTypes.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Example\AllAroundNode.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Example\ExampleNode.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\CalcNode.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\DisplayNode.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\InputNode.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\RuntimeNodeEditor.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\EditorLoadingControl.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\GUIScaleUtility.cs" />

@@ -369,7 +369,10 @@ namespace NodeEditorFramework
 
 			SaveCache ();
 
+			NodeEditor.checkInit ();
+			NodeTypes.FetchNodes ();
 			NodeEditor.curNodeCanvas = mainNodeCanvas;
+
 			if(mainNodeCanvas.start == null)
 				mainNodeCanvas.start = Node.Create (StartSequencerNode.ID, Vector2.zero) as StartSequencerNode;
 

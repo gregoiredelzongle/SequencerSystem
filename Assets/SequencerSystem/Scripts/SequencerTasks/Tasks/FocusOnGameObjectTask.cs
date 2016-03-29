@@ -35,6 +35,13 @@ namespace Headache.Sequencer
             lerpAmount = 0f;
         }
 
+		public override SequencerTask Create()
+		{
+			FocusOnGameObjectTask task = CreateInstance<FocusOnGameObjectTask> ();
+			task.Init ();
+			return task as SequencerTask;
+		}
+
 		public override System.Type GetActorType(){return typeof(FocusOnGameObject);}
 
     }
