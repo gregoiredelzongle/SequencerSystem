@@ -39,7 +39,7 @@ namespace Headache.Sequencer{
 
 			foreach(Node node in canvas.nodes)
 			{
-				if (node.GetID != "startSequencer") {
+				if (node.GetType().IsSubclassOf(typeof(SequenceNode)) || node.GetType() == typeof(SequenceNode)) {
 					SequenceNode sqNode = node as SequenceNode;
 					foreach (SequencerTask args in sqNode.tasks) {
 						dictionary.Add (args, null);
@@ -81,6 +81,7 @@ namespace Headache.Sequencer{
 		public void RunNodeTasks(SequenceNode node)
 		{
 			foreach (SequencerTask task in node.tasks) {
+				
 				if (links [task] == null)
 					Debug.LogError ("Actor not found");
 

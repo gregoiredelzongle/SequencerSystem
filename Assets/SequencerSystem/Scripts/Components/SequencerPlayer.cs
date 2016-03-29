@@ -16,7 +16,6 @@ namespace Headache.Sequencer
         public NodeCanvas canvas;
 		public Sequencer sequencer;
 
-
         public void LoadSequencer()
         {
 			if(canvas != null)

@@ -45,6 +45,8 @@ namespace Headache.Sequencer
 		[HideInInspector]
 		public T task;
 
+		protected bool isRunning = false;
+
 		public override void Run(SequencerTask task)
 		{
 			Run (task as T);
