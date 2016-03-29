@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
+
 using NodeEditorFramework;
 using NodeEditorFramework.Utilities;
 
@@ -139,6 +140,7 @@ namespace NodeEditorFramework
 				Debug.LogError ("Unloaded Canvas due to exception when drawing!");
 				Debug.LogException (e);
 			}
+
 			/*
 			// Draw Side Window
 			sideWindowWidth = Math.Min (600, Math.Max (200, (int)(position.width / 5)));
@@ -356,12 +358,20 @@ namespace NodeEditorFramework
 			// New NodeCanvas
 			mainNodeCanvas = CreateInstance<NodeCanvas> ();
 			mainNodeCanvas.name = "New Canvas";
+
+
+
 			// New NodeEditorState
 			mainEditorState = CreateInstance<NodeEditorState> ();
 			mainEditorState.canvas = mainNodeCanvas;
 			mainEditorState.name = "MainEditorState";
 			openedCanvasPath = "";
+
 			SaveCache ();
+
+			NodeEditor.curNodeCanvas = mainNodeCanvas;
+			if(mainNodeCanvas.start == null)
+				mainNodeCanvas.start = Node.Create (StartSequencerNode.ID, Vector2.zero) as StartSequencerNode;
 
         }
 		

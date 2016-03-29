@@ -47,7 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\SequencerSystem\Editor\SequencerPlayerInspector.cs" />
      <Compile Include="Assets\SequencerSystem\Editor\SequencerPlayerStatus.cs" />
-     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Editor\HeadacheToolbar.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Editor\Node_Editor\NodeEditorWindow.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Editor\Node_Editor\RTNE_InspectorGUI.cs" />
      <None Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\link.xml" />

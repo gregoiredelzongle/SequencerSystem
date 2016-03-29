@@ -149,6 +149,23 @@ namespace NodeEditorFramework
 		/// </summary>
 		public virtual bool AcceptsTranstitions { get { return false; } }
 
+		// Extra Node properties for the sequencer
+
+		/// <summary>
+		/// Can this Node be deleted ?
+		/// </summary>
+		public virtual bool AllowDeleteRequest { get { return true; } }
+
+		/// <summary>
+		/// Can this Node be duplicated ?
+		/// </summary>
+		public virtual bool AllowDuplicateRequest { get { return true; } }
+
+		/// <summary>
+		/// Can this Node be created in the context menu ?
+		/// </summary>
+		public virtual bool AllowCreateInContextMenu { get { return true; } }
+
         #endregion
 
 		#region Protected Callbacks

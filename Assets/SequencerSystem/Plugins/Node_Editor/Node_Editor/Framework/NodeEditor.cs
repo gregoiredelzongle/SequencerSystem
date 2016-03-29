@@ -385,14 +385,17 @@ namespace NodeEditorFramework
 					if (rightClick)
 					{ // Node Context Click
 						GenericMenu menu = new GenericMenu ();
-						menu.AddItem (new GUIContent ("Delete Node"), false, ContextCallback, new NodeEditorMenuCallback ("deleteNode", curNodeCanvas, curEditorState));
-						menu.AddItem (new GUIContent ("Duplicate Node"), false, ContextCallback, new NodeEditorMenuCallback ("duplicateNode", curNodeCanvas, curEditorState));
+						if (curEditorState.focusedNode.AllowDeleteRequest)
+							menu.AddItem (new GUIContent ("Delete Node"), false, ContextCallback, new NodeEditorMenuCallback ("deleteNode", curNodeCanvas, curEditorState));
+						if (curEditorState.focusedNode.AllowDuplicateRequest)
+							menu.AddItem (new GUIContent ("Duplicate Node"), false, ContextCallback, new NodeEditorMenuCallback ("duplicateNode", curNodeCanvas, curEditorState));
 						if (curEditorState.focusedNode.AcceptsTranstitions)
 						{
-							menu.AddSeparator ("Seperator");
+							menu.AddSeparator ("Separator");
 							menu.AddItem (new GUIContent ("Make Transition"), false, ContextCallback, new NodeEditorMenuCallback ("startTransition", curNodeCanvas, curEditorState));
 						}
-						menu.ShowAsContext ();
+						if(curEditorState.focusedNode.AllowDeleteRequest || curEditorState.focusedNode.AllowDuplicateRequest || curEditorState.focusedNode.AcceptsTranstitions)
+							menu.ShowAsContext ();
 						e.Use ();
 					}
 					else if (leftClick)
@@ -444,14 +447,16 @@ namespace NodeEditorFramework
 						{ // A transition is drawn, so provide a context menu with nodes to auto-connect
 							foreach (Node node in NodeTypes.nodes.Keys)
 							{ // Iterate through all nodes and check for compability
-								if (node.AcceptsTranstitions)
+								if (node.AcceptsTranstitions && node.AllowCreateInContextMenu)
 									menu.AddItem (new GUIContent ("Add " + NodeTypes.nodes[node].adress), false, ContextCallback, new NodeEditorMenuCallback (node.GetID, curNodeCanvas, curEditorState));
 							}
 						}
 						else 
 						{ // Ordinary context click, add all nodes to add
-							foreach (Node node in NodeTypes.nodes.Keys)
-								menu.AddItem (new GUIContent ("Add " + NodeTypes.nodes [node].adress), false, ContextCallback, new NodeEditorMenuCallback (node.GetID, curNodeCanvas, curEditorState));
+							foreach (Node node in NodeTypes.nodes.Keys) {
+								if(node.AllowCreateInContextMenu)
+									menu.AddItem (new GUIContent ("Add " + NodeTypes.nodes [node].adress), false, ContextCallback, new NodeEditorMenuCallback (node.GetID, curNodeCanvas, curEditorState));
+							}
 						}
 						menu.ShowAsContext ();
 						e.Use ();
