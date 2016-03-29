@@ -56,7 +56,7 @@ namespace Headache.Sequencer
             GUILayout.EndHorizontal();
 
             h += 50;
-            dialogue = GUILayout.TextArea(dialogue,GUILayout.Height(50));
+			dialogue = GUILayout.TextArea(dialogue,EditorStyles.textArea,GUILayout.Height(50));
             
             for(int i = 0; i < replies.Count;i++)
             {
@@ -65,8 +65,8 @@ namespace Headache.Sequencer
                 GUILayout.BeginHorizontal();
 				if (replies [i] != null) {
 					
-					replies [i].text = GUILayout.TextField (replies [i].text);
-					replies [i].output.DisplayLayout ();
+					replies [i].text = GUILayout.TextField (replies [i].text,GUILayout.Width(250));
+					replies [i].output.DisplayLayout(new GUIContent(""));
 
 					if (GUILayout.Button ("x", GUILayout.Width (20))) {
 						RemoveReply (node, replies [i]);
