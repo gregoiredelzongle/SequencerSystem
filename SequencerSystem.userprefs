@@ -1,6 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SequencerSystem/Framework/SequencerTasks/Actors/PlayDialogueActor.cs">
+    <Files>
+      <File FileName="Assets/SequencerSystem/Editor/SequencerPlayerInspector.cs" Line="50" Column="3" />
+      <File FileName="Assets/SequencerSystem/Samples/Scripts/SpeechBubble.cs" Line="28" Column="1" />
+      <File FileName="Assets/SequencerSystem/Framework/Components/SequencerPlayer.cs" Line="49" Column="35" />
+      <File FileName="Assets/SequencerSystem/Framework/SequencerTasks/Actors/PlayDialogueActor.cs" Line="129" Column="5" />
+      <File FileName="Assets/SequencerSystem/Plugins/Node_Editor/Editor/Node_Editor/NodeEditorWindow.cs" Line="113" Column="4" />
+      <File FileName="Assets/SequencerSystem/Framework/Data/Sequencer.cs" Line="137" Column="40" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

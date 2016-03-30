@@ -119,6 +119,18 @@ public class SequenceNode : Node {
 
 	#region SequenceNode Methods
 
+	public NodeOutput[] GetOutputs()
+	{
+		List<NodeOutput> outputs = new List<NodeOutput> ();
+
+		foreach (NodeKnob knob in nodeKnobs) {
+			if (knob.GetType () == typeof(NodeOutput))
+				outputs.Add (knob as NodeOutput);
+		}
+
+		return outputs.ToArray ();
+	}
+
 	protected void AddTask(string taskID)
 	{
 		

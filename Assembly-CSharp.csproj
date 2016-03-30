@@ -45,6 +45,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerInteractor.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerPlayer.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerTrigger.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\Data\Sequencer.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\FadeActor.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\FocusOnGameObjectActor.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\PlayDialogueActor.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\SequencerActor.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\FocusOnGameObjectTask.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\PlayDialogueTask.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\SequencerTask.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\Utilities\SequencerProperties.cs" />
+     <Compile Include="Assets\SequencerSystem\Framework\Utilities\TaskTypes.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Dialogue\DialogueNode.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\SequenceNode.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\StartSequencerNode.cs" />
@@ -66,21 +79,9 @@
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\OverlayGUI.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\RTEditorGUI.cs" />
      <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\ResourceManager.cs" />
-     <Compile Include="Assets\SequencerSystem\Samples\CharacterControls.cs" />
-     <Compile Include="Assets\SequencerSystem\Samples\SpeechBubble.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerInteractor.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerPlayer.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerTrigger.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Data\Sequencer.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Actors\FadeActor.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Actors\FocusOnGameObjectActor.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Actors\PlayDialogueActor.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Actors\SequencerActor.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Tasks\FocusOnGameObjectTask.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Tasks\PlayDialogueTask.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\SequencerTasks\Tasks\SequencerTask.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Utilities\SequencerProperties.cs" />
-     <Compile Include="Assets\SequencerSystem\Scripts\Utilities\TaskTypes.cs" />
+     <Compile Include="Assets\SequencerSystem\Samples\Scripts\CharacterControls.cs" />
+     <Compile Include="Assets\SequencerSystem\Samples\Scripts\SpeechBubble.cs" />
+     <Compile Include="Assets\SequencerSystem\Samples\Scripts\SpeechBubbleReply.cs" />
      <None Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\link.xml" />
      <None Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Resources\LineShader.shader" />
  <Reference Include="UnityEngine.UI">

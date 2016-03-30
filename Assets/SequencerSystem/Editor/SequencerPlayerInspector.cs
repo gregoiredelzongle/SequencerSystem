@@ -4,64 +4,49 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
 
+using NodeEditorFramework;
 using Headache.Sequencer;
+
 
 [CustomEditor(typeof(SequencerPlayer))]
 public class SequencerPlayerInspector : Editor {
 
-	SequencerPlayer component;
-	SequencerStatus status;
+
+	private SequencerPlayer player;
+	//SequencerStatus status;
 
 	public void OnEnable()
 	{
-		component = target as SequencerPlayer;
-
-		if (component.sequencer != null) {
-			component.sequencer.RefreshDictionary ();
-			status = SequencerStatus.Create (component.sequencer);
-		}
+		player = target as SequencerPlayer;
 	}
 
 	public override void OnInspectorGUI()
 	{
-		component = target as SequencerPlayer;
 
-		if (status != null) {
-			status.ShowGUI ();
-		}
+		EditorGUI.BeginChangeCheck ();
+		player.canvas = EditorGUILayout.ObjectField (player.canvas, typeof(NodeCanvas), true) as NodeCanvas;
 
-		DrawDefaultInspector ();
-
-		if(GUILayout.Button("Load Sequencer"))
-			component.LoadSequencer();
-
-
-
-		if (component.sequencer == null)
-			return;
-		
-		List<SequencerTask> argsList = component.sequencer.links.Keys.ToList();
-
-		foreach (SequencerTask args in argsList) {
-			EditorGUILayout.BeginHorizontal ();
-			EditorGUILayout.PrefixLabel (args.actorName);
-
-			EditorGUI.BeginChangeCheck ();
-
-			component.sequencer.links [args] = (SequencerActor)EditorGUILayout.ObjectField (
-				(SequencerActor)component.sequencer.links [args],
-				args.GetActorType(),
-				true
-			);
-
-			if (EditorGUI.EndChangeCheck ()) {
-				component.sequencer.InitDictionary (component.sequencer.links);
-				EditorUtility.SetDirty (component.sequencer);
-
+		if(EditorGUI.EndChangeCheck())
+		{
+			if (player.canvas == null)
+				player.sequencer = null;
+			else {
+				player.sequencer = Sequencer.Create (player.canvas);
 			}
 
-			EditorGUILayout.EndHorizontal ();
-
 		}
+
+
+		if (player.canvas == null || player.sequencer == null) {
+			EditorGUILayout.LabelField ("(Drop a canvas here)");
+			return;
+		}
+
+		if(GUILayout.Button("Refresh Canvas"))
+			player.sequencer.Refresh (player.canvas);
+
+		player.sequencer.InspectorGUI ();
+
+
 	}
 }
