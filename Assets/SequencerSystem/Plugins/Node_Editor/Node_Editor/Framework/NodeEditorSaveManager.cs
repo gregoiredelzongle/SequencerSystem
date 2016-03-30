@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using System.Linq;
 using System.Collections.Generic;
 
@@ -42,18 +45,45 @@ namespace NodeEditorFramework
 
 	#if UNITY_EDITOR
 
+
+
+			//Load asset at specific path : used to check if asset already exists to avoid loosing overwriting
+
 			if (createWorkingCopy)
 			{ // Copy canvas and editorStates
 				CreateWorkingCopy (ref nodeCanvas, editorStates, true);
 			}
 
+
+
+
+
+			// Check if object is overwriting canvas to avoid loosing references
+			NodeCanvas canvasAtPath = UnityEditor.AssetDatabase.LoadAssetAtPath<NodeCanvas>(path);
+			if(canvasAtPath != null && createWorkingCopy)
+			{
+				DeleteNodeCanvasSubAssets(canvasAtPath);
+				UnityEditor.EditorUtility.CopySerialized(nodeCanvas,canvasAtPath);
+				nodeCanvas = canvasAtPath;
+			}
+			else
+			{
+				UnityEditor.AssetDatabase.CreateAsset (nodeCanvas, path);
+
+			}
+
 			// Write canvas and editorStates
-			UnityEditor.AssetDatabase.CreateAsset (nodeCanvas, path);
+			//UnityEditor.AssetDatabase.CreateAsset (nodeCanvas, path);
+
+
 			foreach (NodeEditorState state in editorStates) 
 			{
 				if (state != null)
 					AddSubAsset (state, nodeCanvas);
 			}
+
+
+
 
 			// Write nodes + contents
 			foreach (Node node in nodeCanvas.nodes)
@@ -74,6 +104,8 @@ namespace NodeEditorFramework
 
 			}
 
+
+
 			UnityEditor.AssetDatabase.SaveAssets ();
 			UnityEditor.AssetDatabase.Refresh ();
 	#else
@@ -84,6 +116,33 @@ namespace NodeEditorFramework
 		}
 
 	#if UNITY_EDITOR
+
+		public static void DeleteNodeCanvasSubAssets(NodeCanvas nodeCanvas)
+		{
+			foreach (Node node in nodeCanvas.nodes)
+			{ // Every node and each ScriptableObject in it
+				DestroySubAsset (node, nodeCanvas);
+				foreach (NodeKnob knob in node.nodeKnobs) 
+				{
+					DestroySubAsset (knob, node);
+					// Add additional scriptableObjects
+					ScriptableObject[] additionalKnobSOs = knob.GetScriptableObjects ();
+					foreach (ScriptableObject so in additionalKnobSOs)
+						DestroySubAsset (so, knob);
+				}
+				// Add additional scriptableObjects
+				ScriptableObject[] additionalNodeSOs = node.GetScriptableObjects ();
+				foreach (ScriptableObject so in additionalNodeSOs)
+					DestroySubAsset (so, node);
+
+			}
+			
+		}
+
+		public static void DestroySubAsset(ScriptableObject subAsset, ScriptableObject mainAsset)
+		{
+			ScriptableObject.DestroyImmediate (subAsset,true);
+		}
 
 		/// <summary>
 		/// Adds a hidden sub asset to the main asset
