@@ -194,7 +194,7 @@ namespace NodeEditorFramework
 			if (nodeCanvas == null)
 				throw new UnityException ("Cannot Load NodeCanvas: The file at the specified path '" + path + "' is no valid save file as it does not contain a NodeCanvas!");
 
-	#if UNITY_EDITOR // Create a working copy of it
+            #if UNITY_EDITOR // Create a working copy of it
 			if (createWorkingCopy)
 			{
 				CreateWorkingCopy (ref nodeCanvas, false);

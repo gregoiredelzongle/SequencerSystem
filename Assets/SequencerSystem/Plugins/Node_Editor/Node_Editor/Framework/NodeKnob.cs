@@ -40,7 +40,7 @@ namespace NodeEditorFramework
 			sidePosition = nodeSidePosition;
 			name = knobName;
 			nodeBody.nodeKnobs.Add (this);
-			ReloadKnobTexture ();
+            ReloadKnobTexture ();
 		}
 
 		#region Knob Texture Loading
@@ -56,15 +56,26 @@ namespace NodeEditorFramework
 				ReloadKnobTexture ();
 		}
 
-		/// <summary>
-		/// Requests to teload the knobTexture and adapts it to the position and orientation
-		/// </summary>
-		protected void ReloadKnobTexture () 
-		{
-			ReloadTexture ();
-			if (knobTexture == null)
-				throw new UnityException ("Knob texture could not be loaded!");
-			if (side != defaultSide) 
+        /// <summary>
+        /// Requests to teload the knobTexture and adapts it to the position and orientation
+        /// </summary>
+        protected void ReloadKnobTexture()
+        {
+            ReloadTexture();
+     
+            if (knobTexture == null)
+            {
+                ConnectionTypes.FetchTypes();
+                ReloadTexture();
+
+            }
+
+            if (knobTexture == null)
+            {
+                throw new UnityException("Knob texture could not be loaded!");
+            }
+
+            if (side != defaultSide) 
 			{ // Rotate Knob texture according to the side it's used on
 				ResourceManager.SetDefaultResourcePath (NodeEditor.editorPath + "Resources/");
 				int rotationSteps = getRotationStepsAntiCW (defaultSide, side);

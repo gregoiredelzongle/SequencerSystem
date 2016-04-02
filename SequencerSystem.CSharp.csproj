@@ -15,7 +15,7 @@
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneOSXIntel:4</UnityBuildTarget>
     <UnityVersion>5.3.0f4</UnityVersion>
     <RootNamespace></RootNamespace>
   </PropertyGroup>
@@ -26,7 +26,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_0;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_0;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +36,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_0;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_0;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -57,6 +57,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -65,6 +71,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerInteractor.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerPlayer.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\Components\SequencerTrigger.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\Data\Sequencer.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\FadeActor.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\FocusOnGameObjectActor.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\PlayDialogueActor.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Actors\SequencerActor.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\FocusOnGameObjectTask.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\PlayDialogueTask.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\SequencerTasks\Tasks\SequencerTask.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\Utilities\SequencerProperties.cs" />
+    <Compile Include="Assets\SequencerSystem\Framework\Utilities\TaskTypes.cs" />
+    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Dialogue\DialogueNode.cs" />
+    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\SequenceNode.cs" />
+    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor HeadacheExtensions\Framework\Nodes\Internal\StartSequencerNode.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\ConnectionTypes.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\Node.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeCanvas.cs" />
@@ -77,35 +99,15 @@
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeKnob.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeOutput.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Framework\NodeTypes.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Example\AllAroundNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Example\ExampleNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\CalcNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\DisplayNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\FloatCalc\InputNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Sequencer\SequenceNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Nodes\Sequencer\StartSequencerNode.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\RuntimeNodeEditor.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\EditorLoadingControl.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\GUIScaleUtility.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\OverlayGUI.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\RTEditorGUI.cs" />
     <Compile Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Utilities\ResourceManager.cs" />
-    <Compile Include="Assets\SequencerSystem\Samples\CharacterControls.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerActor.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerInteractor.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerPlayer.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Components\SequencerTrigger.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Data\Sequence.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\Data\SequencerActionsNode.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvent.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\Args\FocusOnGameObjectArgs.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\Args\PlayDialogueArgs.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\Fade.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\FocusOnGameObject.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\PlayDialogue.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerEvents\SequenceAction.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\SequencerProperties.cs" />
-    <Compile Include="Assets\SequencerSystem\Scripts\TaskTypes.cs" />
+    <Compile Include="Assets\SequencerSystem\Samples\Scripts\CharacterControls.cs" />
+    <Compile Include="Assets\SequencerSystem\Samples\Scripts\SpeechBubble.cs" />
+    <Compile Include="Assets\SequencerSystem\Samples\Scripts\SpeechBubbleReply.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SequencerSystem\Plugins\Node_Editor\Node_Editor\Resources\LineShader.shader" />

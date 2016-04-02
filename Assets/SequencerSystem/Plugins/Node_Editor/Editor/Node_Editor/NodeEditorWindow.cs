@@ -22,7 +22,7 @@ namespace NodeEditorFramework
 		public NodeEditorState mainEditorState;
 		public static NodeCanvas MainNodeCanvas { get { return editor.mainNodeCanvas; } }
 		public static NodeEditorState MainEditorState { get { return editor.mainEditorState; } }
-		public void AssureCanvas () { if (mainNodeCanvas == null) NewNodeCanvas (); }
+		public void AssureCanvas () { if (mainNodeCanvas == null) NewNodeCanvas(); }
 		public static string openedCanvasPath;
 		public string tempSessionPath;
 
@@ -44,7 +44,7 @@ namespace NodeEditorFramework
 		public static void CreateEditor () 
 		{
 			_editor = GetWindow<NodeEditorWindow> ();
-			_editor.minSize = new Vector2 (800, 600);
+			_editor.minSize = new Vector2 (100, 100);
 			NodeEditor.ClientRepaints += _editor.Repaint;
 			NodeEditor.initiated = NodeEditor.InitiationError = false;
 
@@ -86,8 +86,9 @@ namespace NodeEditorFramework
 
 		private void OnEnable () 
 		{
-			tempSessionPath = Path.GetDirectoryName (AssetDatabase.GetAssetPath (MonoScript.FromScriptableObject (this)));
-			LoadCache ();
+            //tempSessionPath = Path.GetDirectoryName (AssetDatabase.GetAssetPath (MonoScript.FromScriptableObject (this)));
+            tempSessionPath = NodeEditor.editorPath + "Resources";
+            LoadCache ();
 
 	#if UNITY_EDITOR
 			// This makes sure the Node Editor is reinitiated after the Playmode changed
@@ -134,10 +135,11 @@ namespace NodeEditorFramework
 				NodeEditor.DrawCanvas (mainNodeCanvas, mainEditorState);
 			}
 			catch (UnityException e)
-			{ // on exceptions in drawing flush the canvas to avoid locking the ui.
-				NewNodeCanvas ();
-				NodeEditor.ReInit (true);
-				Debug.LogError ("Unloaded Canvas due to exception when drawing!");
+			{ 
+                // on exceptions in drawing flush the canvas to avoid locking the ui.
+                /*NewNodeCanvas();
+                NodeEditor.ReInit (true);
+				Debug.LogError ("Unloaded Canvas due to exception when drawing!");*/
 				Debug.LogException (e);
 			}
 
@@ -274,22 +276,24 @@ namespace NodeEditorFramework
 			string lastSessionName = EditorPrefs.GetString ("NodeEditorLastSession");
 			string path = tempSessionPath + "/LastSession.asset";
 			mainNodeCanvas = NodeEditorSaveManager.LoadNodeCanvas (path, false);
-			if (mainNodeCanvas == null)
-				NewNodeCanvas ();
-			else 
-			{
-				mainNodeCanvas.name = lastSessionName;
-				List<NodeEditorState> editorStates = NodeEditorSaveManager.LoadEditorStates (path, false);
-				if (editorStates == null || editorStates.Count == 0 || (mainEditorState = editorStates.Find (x => x.name == "MainEditorState")) == null )
-				{ // New NodeEditorState
-					mainEditorState = CreateInstance<NodeEditorState> ();
-					mainEditorState.canvas = mainNodeCanvas;
-					mainEditorState.name = "MainEditorState";
-					NodeEditorSaveManager.AddSubAsset (mainEditorState, path);
-					AssetDatabase.SaveAssets ();
-					AssetDatabase.Refresh ();
-				}
-			}
+            if (mainNodeCanvas == null)
+            {
+                NewNodeCanvas();
+            }
+            else
+            {
+                mainNodeCanvas.name = lastSessionName;
+                List<NodeEditorState> editorStates = NodeEditorSaveManager.LoadEditorStates(path, false);
+                if (editorStates == null || editorStates.Count == 0 || (mainEditorState = editorStates.Find(x => x.name == "MainEditorState")) == null)
+                { // New NodeEditorState
+                    mainEditorState = CreateInstance<NodeEditorState>();
+                    mainEditorState.canvas = mainNodeCanvas;
+                    mainEditorState.name = "MainEditorState";
+                    NodeEditorSaveManager.AddSubAsset(mainEditorState, path);
+                    AssetDatabase.SaveAssets();
+                    AssetDatabase.Refresh();
+                }
+            }
 		}
 
 		private void DeleteCache () 
@@ -325,7 +329,6 @@ namespace NodeEditorFramework
 			mainNodeCanvas = NodeEditorSaveManager.LoadNodeCanvas (path, true);
 			if (mainNodeCanvas == null) 
 			{
-				Debug.Log ("Error loading NodeCanvas from '" + path + "'!");
 				NewNodeCanvas ();
 				return;
 			}
@@ -367,14 +370,12 @@ namespace NodeEditorFramework
 			mainEditorState.name = "MainEditorState";
 			openedCanvasPath = "";
 
-			SaveCache ();
+            SaveCache();
 
-			NodeEditor.checkInit ();
+            NodeEditor.checkInit ();
 			NodeTypes.FetchNodes ();
 			NodeEditor.curNodeCanvas = mainNodeCanvas;
-
-			if(mainNodeCanvas.start == null)
-				mainNodeCanvas.start = Node.Create (StartSequencerNode.ID, Vector2.zero) as StartSequencerNode;
+            mainNodeCanvas.start = Node.Create(StartSequencerNode.ID, Vector2.zero) as StartSequencerNode;
 
         }
 		
